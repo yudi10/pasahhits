@@ -38,7 +38,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $mahasiswa = mahasiswa::all();
-        return view('mahasiswa.home', compact('mahasiswa'));
+        
+        return view('admin.home', compact('admin'));
     }
 }
