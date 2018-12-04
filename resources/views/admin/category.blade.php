@@ -6,6 +6,11 @@
 
 @section('main-content')
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Add New
+</button>
+
 <div class="">
     <div class="box">
         <div class="box-header">
@@ -45,13 +50,6 @@
         </div>
     </div>
 </div>
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add New
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
