@@ -25,3 +25,9 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::resource('category', 'CategoryController');
+
+Route::resource('brand', 'BrandController');
+
+Route::resource('color', 'ColorController');
+
+Route::resource('size', 'SizeController');
