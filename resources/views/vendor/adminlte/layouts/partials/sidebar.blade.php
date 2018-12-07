@@ -38,13 +38,14 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-shopping-bag'></i>Data Product<i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('brand')}}">Brand</a></li>
-                    <li><a href="{{url('category')}}">Category</a></li>
-                    <li><a href="{{url('color')}}">Color</a></li>
-                    <li><a href="{{url('size')}}">Size</a></li>
+                    <li><a href="{{url('brand')}}"><i class="fa fa-circle-o"></i>Brand</a></li>
+                    <li><a href="{{url('category')}}"><i class="fa fa-circle-o"></i>Category</a></li>
+                    <li><a href="{{url('color')}}"><i class="fa fa-circle-o"></i>Color</a></li>
+                    <li><a href="{{url('size')}}"><i class="fa fa-circle-o"></i>Size</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i>Data Product</a></li>
                 </ul>
             </li>
-        </ul><!-- /.sidebar-menu -->
+            <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
 </aside>

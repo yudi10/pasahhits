@@ -14,7 +14,7 @@ class SizeController extends Controller
      */
     public function index()
     {
-        $sizes = Size::all();
+        $sizes = Size::latest()->paginate(env('PER_PAGE'));
         return view('admin.size', compact('sizes'));
     }
 
@@ -27,6 +27,14 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+            
+        'name'=>'required|max:5|unique:sizes,name',
+        'ukuran'=>'required|max:3',
+            
+        ]);
+
         Size::create($request->all());
         return redirect('size');
     }

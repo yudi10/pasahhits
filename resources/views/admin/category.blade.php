@@ -6,14 +6,15 @@
 
 @section('main-content')
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add New
-</button>
+
 
 <div class="">
     <div class="box">
         <div class="box-header">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+         Add New
+        </button>
             <h3 class="box-title">All Category</h3>
         </div>
         <div class="box-body">
@@ -47,6 +48,7 @@
     </tbody>
 
 </table>
+{!! $categories->links() !!}
         </div>
     </div>
 </div>

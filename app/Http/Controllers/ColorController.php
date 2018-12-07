@@ -14,7 +14,7 @@ class ColorController extends Controller
      */
     public function index()
     {
-        $colors = Color::all();
+        $colors = Color::latest()->paginate(env('PER_PAGE'));
         return view('admin.color', compact('colors'));
     }
 
@@ -26,6 +26,14 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+            
+        'name'=>'required|max:20|unique:colors,name'
+
+            
+        ]);
+
         Color::create($request->all());
         return redirect('color');
     }

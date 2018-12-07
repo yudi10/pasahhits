@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::latest()->paginate(env('PER_PAGE'));
         return view('admin.category', compact('categories'));
     }
 
@@ -28,6 +28,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+            
+        'name'=>'required|max:20|unique:categories,name',
+        'sub_name'=>'required|max:20',
+        'sub_sub_name'=>'required|max:20'
+            
+        ]);
+
         Category::create($request->all());
         return redirect('category');
     }

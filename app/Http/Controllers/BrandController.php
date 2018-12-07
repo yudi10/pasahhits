@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Brand;
 
+
 class BrandController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::all();
+        $brands = Brand::latest()->paginate(env('PER_PAGE'));
+        
         return view('admin.brand', compact('brands'));
     }
 
@@ -27,6 +29,14 @@ class BrandController extends Controller
     public function store(Request $request)
     {
    
+        $this->validate($request,[
+
+            'name'=>'required|max:20|unique:brands,name',
+            'title'=>'required|max:20',
+            'detail'=>'required|max:50'
+
+        ]);
+
         Brand::create($request->all());
         return redirect('brand');
     }

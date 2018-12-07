@@ -6,9 +6,14 @@
 
 @section('main-content')
 
+
 <div class="">
     <div class="box">
         <div class="box-header">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+         Add News
+        </button>
             <h3 class="box-title">All Brand</h3>
         </div>
         <div class="box-body">
@@ -39,17 +44,20 @@
         </tr>
 
         @endforeach
+
+        <input type="text" name="search" id="search" class="form-control" placeholder="Search Data" />
+
+        <h3 align="center">Total Data: <span id="total_records"></span></h3>
     </tbody>
 
+
 </table>
+{!! $brands->links() !!}
         </div>
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add News
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
